@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: umbrellio_blog_user
+  password: umbrellio_blog_password
+    # <%= ENV['UMBRELLIO_BLOG_DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: umbrellio_blog_development
+
+test:
+  <<: *default
+  database: umbrellio_blog_test
+
+production:
+  <<: *default
+  database: umbrellio_blog_production
