@@ -39,8 +39,8 @@ end
 
 group :test do
   gem 'json_spec'
-  gem 'capibara'
+  gem 'capybara'
   gem 'capybara-webkit'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
