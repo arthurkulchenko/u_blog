@@ -4,21 +4,21 @@ class UserValidationService
     schema = Dry::Validation.Schema do
       configure do
         config.messages_file = 'dry-files/errors.yml'
-        option :login
 
         def unique?(attr_name, value)
-          User.where(attr_name => value).empty?
+          # User.where(attr_name => value).empty?
+          User.find_by_sql("select login from users where login ilike '#{value}'").empty?
         end
 
-        def non_blank?(input)
-          !(WHITESPACE_PATTERN =~ input)
+        def non_blank?(value)
+          !(WHITESPACE_PATTERN =~ value)
         end
 
       end
       required(:login).filled(:str?, unique?: :login)
       # required(:login).filled(:non_blank?)
     end
-    result = schema.with(login: params[:login]).call(params) 
+    result = schema.call(params) 
   end
 
 end
