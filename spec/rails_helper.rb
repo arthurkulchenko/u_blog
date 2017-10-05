@@ -16,11 +16,6 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-Capybara.configure do |config|
-  config.javascript_driver = :webkit # :selenium
-  config.ignore_hidden_elements = false
-end
-
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|

@@ -6,16 +6,16 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.1'
-gem 'pg', '~> 0.18'
-gem 'puma', '~> 3.7'
 gem 'responders'
+gem 'pg', '~> 0.18'
+gem 'dry-validation'
+gem 'unicorn'
+gem 'grape'
+gem 'grape-active_model_serializers'
+gem 'active_model_serializers'
+gem 'oj'
+gem 'oj_mimic_json'
 
-# gem 'active_model_serializers'
-# gem 'oj'
-# gem 'oj_mimic_json'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -39,8 +39,8 @@ end
 
 group :test do
   gem 'json_spec'
-  gem 'capybara'
-  gem 'capybara-webkit'
+  # gem 'capybara'
+  # gem 'capybara-webkit'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
